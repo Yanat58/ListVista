@@ -37,7 +37,7 @@ body {
   text-transform: initial;
   max-width: 1920px;
   margin: 0 auto;
-  overflow-x: hidden;
+ 
  
 }
 
@@ -104,49 +104,29 @@ img {
 
 /* header-top */
 
-header {
-  background: radial-gradient(circle at top left, rgb(11, 29, 38) 50%, rgb(11, 29, 38, 0)), url('../images/HG.png'), url('../images/MG.png');
+.overlay {
+  display: block;
+ 
+  top: -400px;
+  max-width: 1920px;
+  height: 1200px;
+  background: linear-gradient(to bottom right, rgb(11, 29, 38, 0.72) 50%, rgb(231, 233, 232)), url('../images/HG.png'), url('../images/MG.png');
+  overflow-x:visible;
 }
 
-.header-list {
- border-bottom:1px solid var(--border-color);
+.container {
+  padding: 64px 80px;
 }
-
-
-
-.header-top ul, li {
-    display: inline-block;
-   
+.page-header {
+  display: flex;
 }
-
-.select-option  {
-    padding: 10px 18px;
-    border-right: 1px solid var(--border-color);
-
+.link {
 }
-
-.select-option select {
-    border: none;
-    color: var(--text-header-top);
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 300;
-    background: transparent;
+.logo {
 }
-
-.select-option option{
-    color:var(--text-header-top);
-    text-transform: uppercase;
+.part {
 }
-
-.header-top-contact {
-    padding: 12px 18px;
-    border-left: 1px solid var(--border-color);  
+.list-nav {
 }
-
-.header-top-contact , a, button {
-    cursor: pointer;
-    font-size: 12px;
-    color:var(--text-header-top);
-    text-transform: capitalize;
+.item-nav {
 }
