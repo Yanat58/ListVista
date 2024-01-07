@@ -1,15 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.cdnfonts.com/css/chronicle-display');
 
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.eot');
+  src: url('../fonts/Gilroy-Bold.woff') format('woff'),
+    url('../fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-ExtraBold.eot');
+  src: url('../fonts/Gilroy-ExtraBold.woff') format('woff'),
+    url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chronicle Display', sans-serif;
+  src: url('../fonts/Chronicle-Display-Semibold.otf');
+  src: url('../fonts/Chronicle-Display-Semibold.woff') format('woff'),
+    url('../fonts/Chronicle-Display-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
 
 :root {
   --text-header-top: #a7b0ba;
   --text-color: #a09e9c;
-  --grey-color: #373939;
+  --active-color: #ed8836;
   --ligth-grey-color: #767f86;
   --white-color: #ffffff;
-  --color-active: #ff545a;
-  --border-color : #f6f8fa;
+  --color-accent: #fbd784;
+  --border-color: #f6f8fa;
 }
 
 * {
@@ -31,14 +58,12 @@ body {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: var(--text-color);
-  text-transform: initial;
+  font-family: 'Gilroy';
+  font-size: 18px;
+  line-height: 1.78;
+  color: var(--white-color);
   max-width: 1920px;
   margin: 0 auto;
- 
- 
 }
 
 h1,
@@ -48,17 +73,13 @@ h4,
 h5,
 h6 {
   margin: 0;
-  color: var(--grey-color);
-  font-size: 18px;
-  font-weight: 500;
+  font-family: 'Chronicle Display', sans-serif;
   text-transform: capitalize;
+  line-height: 1.13;
 }
 
 p {
   margin: 0;
-  color: var(--ligth-grey-color);
-  font-size: 14px;
-  line-height: 1.8;
   text-transform: initial;
 }
 
@@ -85,7 +106,7 @@ button {
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 select,
@@ -105,28 +126,50 @@ img {
 /* header-top */
 
 .overlay {
-  display: block;
- 
-  top: -400px;
   max-width: 1920px;
   height: 1200px;
-  background: linear-gradient(to bottom right, rgb(11, 29, 38, 0.72) 50%, rgb(231, 233, 232)), url('../images/HG.png'), url('../images/MG.png');
-  overflow-x:visible;
+  background: linear-gradient(
+      330deg,
+      rgba(11, 29, 38, 0) 31.06%,
+      #0b1d26 108.93%
+    ),
+    url('../images/HG.png');
+  /* overflow-x: visible; */
+  flex-shrink: 0;
 }
 
 .container {
   padding: 64px 80px;
 }
+
 .page-header {
   display: flex;
+  align-items: center;
 }
+
 .link {
+  text-transform: uppercase;
 }
+
 .logo {
+  font-family: 'Gilroy';
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--white-color);
 }
+
 .part {
+  color: var(--active-color);
 }
+
 .list-nav {
+  display: flex;
+  gap: 40px;
 }
+
 .item-nav {
+}
+
+.item-link {
+  color: var(--white-color);
 }
