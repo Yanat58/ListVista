@@ -5,52 +5,105 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ListVista</title>
+    <!-- Import Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
     />
+    <!-- import icon fontawesome -->
     <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- import CSS file -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
-    <section class="overlay">
-      <div class="container">
-        <nav class="page-header" id="page-header">
-          <a href="" class="link">
-            <span class="logo">list</span>
-            <span class="logo part">vista</span>
-          </a>
-          <ul class="list-nav">
-            <li class="item-nav"><a class="item-link" href="">Equipment</a></li>
-            <li class="item-nav"><a class="item-link" href="">About us</a></li>
-            <li class="item-nav"><a class="item-link" href="">Blog</a></li>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="./index.html" alt="logo" class="link logo-box">
+          <span class="logo">list</span>
+          <span class="logo part">vista</span>
+        </a>
+
+        <div class="menu" id="mobile-menu">
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">Equipment</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item lg-screen-hidden">
+              <a href="#" class="nav-link">Account</a>
+            </li>
           </ul>
-          <div class="account">
-            <i class="fa fa-regular fa-circle-user"></i>
-            <p>Account</p>
+
+          <div
+            class="menu-toggle-icon menu-toggle-close"
+            id="menu-toggle-close"
+          >
+            <i class="fa-solid fa-xmark"></i>
           </div>
-        </nav>
-        <div class="hero">
-          <div class="socials">
-            <p class="social-text">Follow us</p>
-            <div class="social-link">
-              <a href="" class="fa fa-brands fa-instagram"> </a>
-              <a href="" class="fa fa-brands fa-twitter"></a>
+        </div>
+
+        <a
+          href="#"
+          class="nav-link account-link place-items-center sm-screen-hidden"
+        >
+          <i class="fa fa-regular fa-circle-user"></i>
+          Account
+        </a>
+
+        <div class="menu-toggle-icon menu-toggle-open" id="menu-toggle-open">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-container d-grid">
+          <div class="hero-data" id="hero-data">
+            <div class="socials">
+              <p class="social-text">Follow us</p>
+              <div class="social-link">
+                <a href="" class="fa-brands fa-instagram"> </a>
+                <a href="" class="fa-brands fa-twitter"></a>
+              </div>
+            </div>
+            <div class="hero-content">
+              <span class="tagline">A Hiking guide</span>
+              <h1 class="title main-title">
+                Be prepared for the Mountains and beyond!
+              </h1>
+              <a href="#" class="btn btn-scroll-down">
+                Scroll down
+                <i class="fa fa-solid fa-arrow-down-long"></i>
+              </a>
             </div>
           </div>
-          <div class="hero-content">
-            <p class="top-text">A Hiking guide</p>
-            <h1 class="hero-title">
-              Be prepared for the Mountains and beyond!
-            </h1>
-            <a href="#">
-              <span class="down-text"> scroll down</span>
-              <i class="fa fa-solid fa-arrow-down-long"></i>
-            </a>
-          </div>
-          <div class="slider"></div>
         </div>
-      </div>
-    </section>
+        <img
+          src="./images/HG.png"
+          alt=""
+          class="parallax-img parallax-top-img"
+          id="sky"
+        />
+        <img
+          src="./images/MG.png"
+          alt=""
+          class="parallax-img parallax-middle-img"
+          id="mountains"
+        />
+        <img
+          src="./images/VG.png"
+          alt=""
+          class="parallax-img parallax-bottom-img"
+          id="grassland"
+        />
+      </section>
+    </main>
+    <!-- <div class="hero">
+      
+      <div class="slider"></div>
+    </div> -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
