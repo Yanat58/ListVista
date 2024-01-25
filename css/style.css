@@ -32,15 +32,15 @@
   --color-dark: #0b1d26;
 
   --font-size-sm: 14px;
-  --font-size-md: 26px;
-  --font-size-lg: 52px;
-  --font-size-xl: 78px;
+  --font-size-md: 16px;
+  --font-size-lg: 32px;
+  --font-size-xl: 48px;
 
-  --margin-bottom-sm: 26px;
-  --margin-bottom-md: 32px;
-  --margin-bottom-lg: 52px;
+  --margin-bottom-sm: 16px;
+  --margin-bottom-md: 24px;
+  --margin-bottom-lg: 32px;
 
-  --section-spacing: 64px 0 40px;
+  --section-spacing: 40px 0 25px;
   /* --container-spacing: 0 32px; */
 }
 
@@ -56,7 +56,7 @@ html {
 
 body {
   font-family: 'Gilroy';
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-style: normal;
   line-height: normal;
   color: var(--color-text);
@@ -72,7 +72,7 @@ h6 {
   margin: 0;
   font-family: 'Chronicle Display', sans-serif;
   text-transform: capitalize;
-  line-height: 1.13;
+  line-height: 1.3;
 }
 
 p {
@@ -81,9 +81,8 @@ p {
 }
 
 img {
-  /* display: block;
-  border: none; */
   max-width: 100%;
+  height: auto;
 }
 
 ul {
@@ -108,7 +107,7 @@ a {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 38px;
+  padding: 0 24px;
 }
 
 /* header */
@@ -125,7 +124,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 64px;
+  padding-top: 40px;
 }
 
 .link {
@@ -133,7 +132,7 @@ a {
 }
 
 .logo-box {
-  min-width: 110px;
+  min-width: 108px;
 }
 
 .logo {
@@ -147,6 +146,10 @@ a {
   color: var(--color-active);
 }
 
+.sm-screen-hidden {
+  display: none;
+}
+
 .menu {
   position: fixed;
   top: -100%;
@@ -154,8 +157,8 @@ a {
   transform: translateX(-50%);
   width: 80%;
   background-color: var(--color-dark);
-  padding: 90px;
-  border-radius: 2px;
+  padding: 50px;
+  border-radius: 8px;
   transition: 0.5s ease;
   z-index: 9999;
 }
@@ -165,11 +168,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-}
-
-.sm-screen-hidden {
-  display: none;
+  gap: 15px;
 }
 
 .menu-toggle-icon {
@@ -178,8 +177,8 @@ a {
 
 .menu-toggle-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 10px;
+  right: 10px;
 }
 
 .nav-link {
@@ -189,7 +188,7 @@ a {
 /* menu JS styles */
 
 .menu.menu-opened {
-  top: 160px;
+  top: 100px;
 }
 
 .header::after {
@@ -220,23 +219,13 @@ a {
 
 /* hero */
 
-/* .overlay {
-  max-width: 1920px;
-  height: 1200px;
-  background: linear-gradient(
-      330deg,
-      rgba(11, 29, 38, 0) 31.06%,
-      #0b1d26 108.93%
-    ),
-    url('../images/HG.png');
-  overflow-x: visible;
-  flex-shrink: 0;
-} */
+main {
+  overflow: hidden;
+}
 
 .hero {
-  position: absolute;
-  width: 100%;
-  height: 1600px;
+  position: relative;
+  height: 1000px;
 }
 
 .hero::after {
@@ -246,7 +235,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
+  background-image: linear-gradient(
     330deg,
     rgba(11, 29, 38, 0) 31.06%,
     #0b1d26 108.93%
@@ -254,20 +243,33 @@ a {
   z-index: 50;
 }
 
+/* .hero-botom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+ 
+  z-index: 80;
+} */
+
 .hero-data {
   position: relative;
-  padding-top: 15rem;
+  padding-top: 150px;
   display: flex;
   align-items: center;
   z-index: 100;
 }
 
 .socials {
-  margin-right: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-right: 25%;
+  align-items: center;
 }
 
 .social-link {
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -294,7 +296,6 @@ a {
   display: flex;
   align-items: center;
   font-weight: 700;
-  font-size: var(--font-size-sm);
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -309,21 +310,47 @@ a {
   background-color: var(--color-accent);
 }
 
-.hero-title {
+.title {
   font-size: var(--font-size-md);
   line-height: 1.3;
 }
 
-.fa {
-  font-size: 18px;
-  margin-left: 8px;
+.main-title {
+  font-size: var(--font-size-lg);
 }
 
-.parallax-img{
+.fa {
+  font-size: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  font-weight: 700;
+  gap: 10px;
+}
+
+.parallax-img {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 960px;
+  height: 600px;
   object-fit: cover;
   object-position: 30% 50%;
+}
+
+.parallax-top-img {
+  top: 0;
+}
+
+.parallax-middle-img {
+  top: 30%;
+}
+
+.parallax-bottom-img {
+  top: 50%;
+  z-index: 110;
+}
+
+.test {
+  height: 10000px;
 }
