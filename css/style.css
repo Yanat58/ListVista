@@ -31,7 +31,7 @@
   --color-accent: #fbd784;
   --color-dark: #0b1d26;
 
-  --font-size-sm: 18px;
+  --font-size-sm: 14px;
   --font-size-md: 26px;
   --font-size-lg: 52px;
   --font-size-xl: 78px;
@@ -56,7 +56,7 @@ html {
 
 body {
   font-family: 'Gilroy';
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   font-style: normal;
   line-height: normal;
   color: var(--color-text);
@@ -81,8 +81,8 @@ p {
 }
 
 img {
-  display: block;
-  border: none;
+  /* display: block;
+  border: none; */
   max-width: 100%;
 }
 
@@ -97,7 +97,7 @@ button {
 }
 
 i {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 a {
@@ -182,9 +182,6 @@ a {
   right: 16px;
 }
 
-.nav-item {
-}
-
 .nav-link {
   letter-spacing: 1px;
 }
@@ -238,6 +235,7 @@ a {
 
 .hero {
   position: absolute;
+  width: 100%;
   height: 1600px;
 }
 
@@ -287,17 +285,17 @@ a {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 14px;
   justify-content: space-between;
   width: 50vw;
-  height: 270px;
 }
 
 .tagline {
   display: flex;
   align-items: center;
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--font-size-sm);
-  letter-spacing: 6px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--color-accent);
 }
@@ -305,25 +303,27 @@ a {
 .tagline::before {
   content: '';
   display: inline-block;
-  width: 64px;
+  width: 40px;
   height: 2px;
-  margin-right: 15px;
+  margin-right: 10px;
   background-color: var(--color-accent);
 }
 
 .hero-title {
-  font-size: 78px;
-  line-height: 100px;
-}
-
-.down-text {
-  margin-right: 6px;
-  color: var(--color-text);
+  font-size: var(--font-size-md);
+  line-height: 1.3;
 }
 
 .fa {
-  font-size: 20px;
+  font-size: 18px;
+  margin-left: 8px;
 }
 
-.slider {
+.parallax-img{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 960px;
+  object-fit: cover;
+  object-position: 30% 50%;
 }
