@@ -21,8 +21,8 @@ window.addEventListener('scroll', () => {
   let scrollPosition = window.scrollY;
 
   grassImage.style.transform = 'translateY(' + -scrollPosition * 0.03 + '%)';
-  mountainImage.style.transform = 'translateY(' + -scrollPosition * 0.06 + '%)';
-  skyImage.style.transform = 'translateY(' + -scrollPosition * 0.02 + '%)';
-  heroData.style.transform = 'translateY(' + scrollPosition * 0.06 + '%)';
+  mountainImage.style.transform = 'translateY(' + -scrollPosition * 0.06 + '%)'; 
+  skyImage.style.transform = 'translateY(' + -scrollPosition * 0.04 + '%)';
+  heroData.style.transform = 'translateY(' + scrollPosition * 0.05 + '%)';
   heroData.style.opacity = 1 - scrollPosition * 0.002;
 });

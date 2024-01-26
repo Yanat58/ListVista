@@ -52,6 +52,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -335,7 +336,7 @@ main {
   width: 100%;
   height: 600px;
   object-fit: cover;
-  object-position: 30% 50%;
+  object-position: 20% 50%;
 }
 
 .parallax-top-img {
