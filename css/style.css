@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Gilroy';
   src: url('../fonts/Gilroy-Bold.eot');
   src: url('../fonts/Gilroy-Bold.woff') format('woff'),
@@ -14,15 +14,25 @@
     url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
-}
+} */
 
-@font-face {
+/* @font-face {
   font-family: 'Chronicle Display', sans-serif;
   src: url('../fonts/Chronicle-Display-Semibold.eot');
   src: url('../fonts/Chronicle-Display-Semibold.woff') format('woff'),
     url('../fonts/Chronicle-Display-Semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Chronicle Display';
+  src: url('../fonts/ChronicleDisplay.woff');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy.woff');
 }
 
 :root {
@@ -32,16 +42,16 @@
   --color-dark: #0b1d26;
 
   --font-size-sm: 14px;
-  --font-size-md: 16px;
-  --font-size-lg: 32px;
-  --font-size-xl: 48px;
+  --font-size-md: 18px;
+  --font-size-lg: 24px;
+  --font-size-xl: 32px;
 
   --margin-bottom-sm: 16px;
   --margin-bottom-md: 24px;
   --margin-bottom-lg: 32px;
 
   --section-spacing: 40px 0 25px;
-  /* --container-spacing: 0 32px; */
+  --container-spacing: 0 24px;
 }
 
 * {
@@ -57,6 +67,7 @@ html {
 
 body {
   font-family: 'Gilroy';
+  font-weight: 500;
   font-size: var(--font-size-md);
   font-style: normal;
   line-height: normal;
@@ -72,6 +83,7 @@ h5,
 h6 {
   margin: 0;
   font-family: 'Chronicle Display', sans-serif;
+  font-weight: 600;
   text-transform: capitalize;
   line-height: 1.3;
 }
@@ -108,7 +120,11 @@ a {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: var(--container-spacing);
+}
+
+.d-grid {
+  display: grid;
 }
 
 /* header */
@@ -139,7 +155,7 @@ a {
 .logo {
   font-family: 'Gilroy';
   font-weight: 800;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   color: var(--color-text);
 }
 
@@ -244,29 +260,19 @@ main {
   z-index: 50;
 }
 
-/* .hero-botom::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
- 
-  z-index: 80;
-} */
-
 .hero-data {
   position: relative;
   padding-top: 150px;
   display: flex;
   align-items: center;
-  z-index: 100;
+  z-index: 150;
 }
 
 .socials {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-right: 25%;
+  margin-right: 15%;
   align-items: center;
 }
 
@@ -284,22 +290,15 @@ main {
   rotate: 180deg;
 }
 
-.hero-content {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-  justify-content: space-between;
-  width: 50vw;
-}
-
 .tagline {
   display: flex;
   align-items: center;
+  font-size: var(--font-size-sm);
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--color-accent);
+  margin-bottom: var(--margin-bottom-md);
 }
 
 .tagline::before {
@@ -312,12 +311,14 @@ main {
 }
 
 .title {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   line-height: 1.3;
+  margin-bottom: var(--margin-bottom-md);
 }
 
 .main-title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
 }
 
 .fa {
@@ -326,6 +327,7 @@ main {
 
 .btn {
   display: inline-flex;
+  align-items: baseline;
   font-weight: 700;
   gap: 10px;
 }
@@ -336,7 +338,7 @@ main {
   width: 100%;
   height: 600px;
   object-fit: cover;
-  object-position: 20% 50%;
+  object-position: 20% 60%;
 }
 
 .parallax-top-img {
@@ -348,10 +350,192 @@ main {
 }
 
 .parallax-bottom-img {
-  top: 50%;
+  top: 49%;
   z-index: 110;
 }
 
-.test {
-  height: 10000px;
+/* hiking information */
+
+.card-container,
+.footer-container {
+  padding: 0 40px;
+}
+
+.hiking-information {
+  position: relative;
+  margin-top: -120px;
+  z-index: 500;
+}
+
+.card {
+  gap: 64px;
+}
+
+.card-info {
+  position: relative;
+  margin: 60px 0 100px;
+}
+
+.count {
+  position: absolute;
+  top: -55px;
+  left: -20px;
+  font-size: 100px;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.card-image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.card-image.frame-position-center {
+  object-position: 50% 100%;
+}
+
+.card-description {
+  line-height: 2.8rem;
+  margin-bottom: var(--margin-bottom-md);
+}
+
+.btn-accent {
+  color: var(--color-accent);
+}
+
+/* footer */
+
+footer {
+  padding-bottom: 50px;
+}
+
+.footer-container {
+  row-gap: 32px;
+}
+
+.brand-information > * {
+  margin-bottom: var(--margin-bottom-md);
+}
+
+
+.copyright {
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+}
+
+.footer-nav-title {
+  color: var(--color-accent);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--margin-bottom-md);
+}
+
+.footer-nav-link {
+  margin-bottom: 8px;
+}
+
+.brand-information,
+.footer-nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-infomation {
+  order: 1;
+}
+
+.footer-nav {
+  order: 0;
+  gap: var(--margin-bottom-md);
+}
+
+/* media quaries */
+
+@media screen and (min-width: 768px) {
+  :root {
+    --font-size-md: 20px;
+    --font-size-xl: 58px;
+    --container-spasing: 0 80px;
+  }
+
+  .fa{
+    font-size: 20px;
+  }
+
+  /* hero */
+
+  .hero {
+    /* height: 100vh; */
+  }
+
+  .parallax-img {
+    height: 900px;
+  }
+
+  .parallax-bottom-img {
+    top: 55%;
+  }
+
+  .parallax-middle-img {
+    top: 30%;
+  }
+
+  /* hiking information */
+
+  .card-container,
+  .footer-container {
+    padding: 0 120px;
+  }
+
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 64px;
+    /* margin-bottom: 150px; */
+  }
+
+  .card-image {
+    grid-column: 1/-1;
+    width: 600px;
+    height: 750px;
+    justify-self: center;
+  }
+
+  .card-info {
+    grid-column: 1/-1;
+  }
+
+  .count {
+    font-size: 200px;
+    left: -80px;
+    top: -120px;
+  }
+
+  .tagline::before {
+    width: 64px;
+  }
+
+  .card-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  /* .footer-container{
+    grid-template-columns: .75fr 1fr;
+    column-gap: 64px;
+  } */
+
+  .footer-nav{
+    order: 1;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 64px;
+  }
+
+  .footer-nav-link:last-child{
+    margin-bottom: 0;
+  }
+
+  .copyright{
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
 }
