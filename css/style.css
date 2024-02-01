@@ -83,7 +83,7 @@ h5,
 h6 {
   margin: 0;
   font-family: 'Chronicle Display', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: capitalize;
   line-height: 1.3;
 }
@@ -144,10 +144,6 @@ a {
   padding-top: 40px;
 }
 
-.link {
-  text-transform: uppercase;
-}
-
 .logo-box {
   min-width: 108px;
 }
@@ -155,7 +151,8 @@ a {
 .logo {
   font-family: 'Gilroy';
   font-weight: 800;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
+  text-transform: capitalize;
   color: var(--color-text);
 }
 
@@ -215,7 +212,7 @@ a {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.65);
   z-index: 1500;
   opacity: 0;
   transform: scale(0);
@@ -332,6 +329,22 @@ main {
   gap: 10px;
 }
 
+
+.btn,
+.btn i,
+.nav-link {
+  transition: transform 0.5s;
+}
+
+.btn:hover,
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.btn-scroll-down:hover i {
+  transform: translateY(0.5rem);
+}
+
 .parallax-img {
   position: absolute;
   left: 0;
@@ -387,7 +400,6 @@ main {
 
 .card-image {
   width: 100%;
-  height: 520px;
   object-fit: cover;
 }
 
@@ -418,7 +430,6 @@ footer {
   margin-bottom: var(--margin-bottom-md);
 }
 
-
 .copyright {
   font-size: var(--font-size-sm);
   opacity: 0.8;
@@ -426,7 +437,7 @@ footer {
 
 .footer-nav-title {
   color: var(--color-accent);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   margin-bottom: var(--margin-bottom-md);
 }
 
@@ -446,34 +457,29 @@ footer {
 
 .footer-nav {
   order: 0;
-  gap: var(--margin-bottom-md);
+  gap: 28px;
 }
 
 /* media quaries */
 
 @media screen and (min-width: 768px) {
   :root {
-    --font-size-md: 20px;
     --font-size-xl: 58px;
     --container-spasing: 0 80px;
   }
 
-  .fa{
+  .fa {
     font-size: 20px;
   }
 
   /* hero */
 
-  .hero {
-    /* height: 100vh; */
-  }
-
   .parallax-img {
-    height: 900px;
+    height: auto;
   }
 
   .parallax-bottom-img {
-    top: 55%;
+    top: 50%;
   }
 
   .parallax-middle-img {
@@ -490,13 +496,12 @@ footer {
   .card {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 64px;
-    /* margin-bottom: 150px; */
+    margin-bottom: 200px;
   }
 
   .card-image {
     grid-column: 1/-1;
     width: 600px;
-    height: 750px;
     justify-self: center;
   }
 
@@ -517,25 +522,158 @@ footer {
   .card-title {
     font-size: var(--font-size-xl);
   }
-  
-  /* .footer-container{
-    grid-template-columns: .75fr 1fr;
-    column-gap: 64px;
-  } */
 
-  .footer-nav{
-    order: 1;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 64px;
+  .footer-container {
+    gap: 50px;
   }
 
-  .footer-nav-link:last-child{
+  .footer-nav {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 40px;
+  }
+
+  .footer-nav-link:last-child {
     margin-bottom: 0;
   }
+}
 
-  .copyright{
+@media screen and (min-width: 991px) {
+  :root {
+    --font-size: 75px;
+  }
+
+  /* header */
+
+  .menu {
+    position: initial;
+    transform: initial;
+    width: initial;
+    background-color: initial;
+    padding: initial;
+    border-radius: initial;
+    transition: initial;
+    margin-left: initial;
+  }
+
+  .menu,
+  .nav-list {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .lg-screen-hidden,
+  .menu-toggle-icon {
+    display: none;
+  }
+
+  .sm-screen-hidden {
+    display: block;
+  }
+
+  .nav-link {
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .nav-item {
+    padding: 8px 24px;
+  }
+
+  .account-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+
+
+
+  .btn-accent:hover i {
+    transform: translateX(0.5rem);
+  }
+
+  /* hero */
+
+  .parallax-middle-img {
+    top: 40%;
+  }
+
+  .parallax-bottom-img {
+    top: 60%;
+  }
+
+  .hero-data {
+    padding-top: 200px;
+  }
+
+  /* hiking information */
+
+  .hiking-information {
+    margin-top: 0;
+    padding-top: 200px;
+  }
+
+  .card {
+    column-gap: 80px;
+    margin-bottom: 120px;
+  }
+
+  .card-image {
+    grid-column: initial;
+    order: 1;
+    width: 480px;
+    height: 680px;
+    justify-self: end;
+  }
+
+  .card-info {
+    grid-column: initial;
+    align-self: center;
+  }
+
+  .order-first {
+    order: 0;
+    justify-self: start;
+  }
+
+  /* footer */
+
+  .footer-container {
+    grid-template-columns: 0.6fr 1fr;
+    column-gap: 64px;
+  }
+
+  .footer-nav-group {
+    justify-self: end;
+  }
+
+  .copyright {
     margin-top: auto;
     margin-bottom: 0;
   }
+}
 
+@media screen and (min-width: 1068px) {
+  .hero-data {
+    padding-top: 290px;
+  }
+
+  .socials {
+    margin-right: 25%;
+  }
+
+  .hero-content {
+    max-width: 750px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+  }
+
+  .footer-nav-group {
+    justify-self: end;
+  }
 }
